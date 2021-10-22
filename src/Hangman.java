@@ -5,13 +5,12 @@ public class Hangman{
     //We want these private statics to describe that we want to hide the word behind "_", so the player
     //cant cheat while playing the game
 
-
-    private static String wordHidden = FileRead.makeWords(/*playerDiff*/).get((int) (Math.random() * FileRead.makeWords(/*playerDiff*/).size()));
-
-
+    private static String wordHidden = FileRead.makeWords().get((int) (Math.random() * FileRead.makeWords().size()));
+    //Hides the random word, described as "asterisk"
     private static String asterisk = new String(new char[wordHidden.length()]).replace("\0", "_");
     //Counter for amount of fails
     private static int counter = 0;
+    //Scanner for later
     private static Scanner scanner = new Scanner(System.in);
 
 
@@ -37,6 +36,8 @@ public class Hangman{
             //If playerInputs index at 0 is the same as one of the letters that is hidden in the word, will the checked word become
             //the player input
             if (wordHidden.charAt(i) == playerInput.charAt(0)) {
+                //The checkPlayerInput will get the playerInput that was written at index 0 (AKA so simplify if i write)
+                //hello, it will only take h to replace it.
                 checkPlayerInput += playerInput.charAt(0);
             } else if (asterisk.charAt(i) != '_') {
                 checkPlayerInput += wordHidden.charAt(i);
@@ -56,10 +57,11 @@ public class Hangman{
             counter++;
             System.out.println("Wrong guess;" +
                     " \nTotal number of wrong guesses: "+ counter);
-
+            playerFail();
         } else {
             //Else it will replace the asterisk shown in the console with the word
             asterisk = checkPlayerInput;
+
         }
         if (asterisk.equals(wordHidden)) {
             //If it so should happen that all words have been revealed the game will stop and the player will win
@@ -70,5 +72,10 @@ public class Hangman{
 
         }
     }
+    public static void playerFail(){
+        System.out.println("What the dog doing tho? ");
+
+
+        }
     }
 

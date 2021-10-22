@@ -9,8 +9,6 @@ public class FileRead {
 
     public static ArrayList<String> makeWords() {
         ArrayList<String> hangmanWord = new ArrayList<String>();
-
-
         try {
             File file = new File("src/ReadMe");
             Scanner scanner = new Scanner(file);
