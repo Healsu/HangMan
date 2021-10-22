@@ -1,13 +1,14 @@
-import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
-public class Hangman {
+
+public class Hangman{
 
     //We want these private statics to describe that we want to hide the word behind "_", so the player
     //cant cheat while playing the game
-    private static String wordHidden = FileRead.makeWords().get((int) (Math.random() * FileRead.makeWords().size()));
+
+
+    private static String wordHidden = FileRead.makeWords(/*playerDiff*/).get((int) (Math.random() * FileRead.makeWords(/*playerDiff*/).size()));
+
+
     private static String asterisk = new String(new char[wordHidden.length()]).replace("\0", "_");
     //Counter for amount of fails
     private static int counter = 0;
