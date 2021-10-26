@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
+
 public class Hangman{
 
-    //We want these private statics to describe that we want to hide the word behind "_", so the player
-    //cant cheat while playing the game
+    //We have these two private Strings which purpose is to pick a random word from the ReadMe file, given in the folder
+    private String wordHidden = FileRead.makeWords().get((int) (Math.random() * FileRead.makeWords().size()));
+    //While this ones purpose is to hide the string with "_" so the player cant cheat and just see the word
+    //they are suppose to guessl
+    private String asterisk = new String(new char[wordHidden.length()]).replace("\0", "_");
 
-    private static String wordHidden = FileRead.makeWords().get((int) (Math.random() * FileRead.makeWords().size()));
-    //Hides the random word, described as "asterisk"
-    private static String asterisk = new String(new char[wordHidden.length()]).replace("\0", "_");
     //Counter for amount of fails
     private static int counter = 0;
     //Scanner for later
     private static Scanner scanner = new Scanner(System.in);
 
-
-    public static void playGame(){
-        //while loop to check if counter is below 6 and if there is still a word that havent been revealed yet.
+    //This is where we want the game itself to start after being called in the main
+    public void playGame(){
+        //while loop to check if counter is below 6 and if there is still a word that haven't been revealed yet.
         while (counter < 6 && asterisk.contains("_")) {
             System.out.println("Guess any letter in the word");
             System.out.println(asterisk);
@@ -27,10 +28,9 @@ public class Hangman{
             hangman(playerInput);
         }
     }
-    public static void hangman(String playerInput){
+    public void hangman(String playerInput){
         //Here we make a new check that will compare itself with the player input.
         String checkPlayerInput = "";
-
         for (int i = 0; i < wordHidden.length(); i++) {
 
             //If playerInputs index at 0 is the same as one of the letters that is hidden in the word, will the checked word become
@@ -49,7 +49,7 @@ public class Hangman{
       checkGuess(checkPlayerInput);
 
     }
-    public static void checkGuess(String checkPlayerInput){
+    public void checkGuess(String checkPlayerInput){
 
         //If the checkedPlayerInput should be the same as asterisk, it will result being wrong and a point will go to the counter
         //And if this counter should reach 6, the player loses
@@ -72,6 +72,8 @@ public class Hangman{
 
         }
     }
+
+    //Extra illustration to gamify more this program with visuals.
     public static void playerFail(){
         System.out.println("What the dog doing tho? ");
 
