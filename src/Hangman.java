@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Hangman{
 
     //We have these two private Strings which purpose is to pick a random word from the ReadMe file, given in the folder

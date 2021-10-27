@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class FileRead {
     public static ArrayList<String> makeWords() {
         ArrayList<String> hangmanWord = new ArrayList<String>();
