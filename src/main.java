@@ -12,14 +12,6 @@ public class main {
 
                 Hangman CreateGame = new Hangman();
                 CreateGame.playGame();
-
-            /*else if(playerDiff.equalsIgnoreCase("hard")){
-                Hangman CreateGame = new Hangman(FileRead.diffPlayer()[3],FileRead.diffPlayer()[4]);
-                CreateGame.playGame();
-            }
-
-             */
-
     }
 
 
