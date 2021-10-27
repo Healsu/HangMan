@@ -13,7 +13,8 @@ public class main {
                 Hangman CreateGame = new Hangman();
                 CreateGame.playGame();
     }
-
-
 }
+        //Extra Notes - Background Information//
+//My main intend was to try and keep myself limited to 2-3 classes, and not make a entire new class just for hardmode
+//Didnt work tho
 

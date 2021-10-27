@@ -56,7 +56,6 @@ public class Hangman{
             counter++;
             System.out.println("Wrong guess;" +
                     " \nTotal number of wrong guesses: "+ counter);
-            playerFail();
         } else {
             //Else it will replace the asterisk shown in the console with the word
             asterisk = checkPlayerInput;
@@ -72,11 +71,5 @@ public class Hangman{
         }
     }
 
-    //Extra illustration to gamify more this program with visuals.
-    public static void playerFail(){
-        System.out.println("What the dog doing tho? ");
-
-
-        }
     }
 
