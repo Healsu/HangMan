@@ -9,7 +9,7 @@ public class main {
         System.out.println("\nSince i cant make hard mode work, just write something and lets go with easy mode: ");
         String playerDiff = scanner.nextLine();
 
-
+        String bla = "\\";
                 Hangman CreateGame = new Hangman();
                 CreateGame.playGame();
     }
