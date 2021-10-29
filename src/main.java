@@ -9,12 +9,11 @@ public class main {
         System.out.println("\nSince i cant make hard mode work, just write something and lets go with easy mode: ");
         String playerDiff = scanner.nextLine();
 
-        String bla = "\\";
                 Hangman CreateGame = new Hangman();
                 CreateGame.playGame();
     }
 }
         //Extra Notes - Background Information//
 //My main intend was to try and keep myself limited to 2-3 classes, and not make a entire new class just for hardmode
-//Didnt work tho
+//Didnt work tho, so i kinda just gave up and just went with a easy mode only.
 
